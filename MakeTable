@@ -1,0 +1,26 @@
+#! /user/bin/mysql
+DROP TABLE IF EXISTS Inventory;
+DROP TABLE IF EXISTS Images;
+DROP TABLE IF EXISTS Manufacturer;
+
+CREATE TABLE Inventory (
+	Item_Id char(4) primary key, 
+	Item_Name text, 
+	Item_Desc mediumtext, 
+	Item_Quan int(4), 
+	Item_Price double(8,2), 
+	Effective_Date date, 
+	Man_Id char(4), 
+	Notes longtext
+);
+
+CREATE TABLE Images (
+	Image_Id char(4) primary key, 
+	Item_Id char(4), 
+	Image_Link text
+);
+
+CREATE TABLE Manufacturer (
+	Man_Id char(4) primary key, 
+	Man_Name text
+);
